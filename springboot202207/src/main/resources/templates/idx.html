@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/hello" method="post">
+        <span>[[${goods.gid}]],,,[[${goods.gname}]],,,[[${goods.gprice}]]</span>
+        <br/>
+        <img src="/a.jpg"/>
+        <img src="/images/a.jpg"/>
+        <img th:src="@{'/'+${goods.gimg}}"/>
+        <img th:src="@{'/images/'+${goods.gimg}}"/>
+        this is templates/idx.html;<br/>
+
+        <ul>
+            <li><img src="images/d1.jpg"/></li>
+            <li><img src="images/d2.jpg"/></li>
+            <li><img src="images/d3.jpg"/></li>
+            <li><img src="images/d4.jpg"/></li>
+        </ul>
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="post">
+        <h1 th:text="${msg}"></h1>
+        [[${goods.gid}]]<br/>
+        [[${goods.gname}]]<br/>
+        [[${goods.gdate}]]<br/>
+        [[${goods.gprice}]]<br/>
+        [[${goods.gstatus}]]<br/>
+        [[${goods.gimg}]]<br/>
+        <img th:src="@{'/images/'+${goods.gimg}}"/>
+    </form>
+</body>
+</html>

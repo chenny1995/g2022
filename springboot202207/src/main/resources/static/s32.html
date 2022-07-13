@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleft.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" width="600">
+        <tr>
+            <th>编号</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品日期</th>
+            <th>商品状态</th>
+            <th>商品图片</th>
+        </tr>
+        <div th:each="goods: ${list}">
+            <tr>
+                <td>[[${goods.gid}]]</td>
+                <td>[[${goods.gname}]]</td>
+                <td>[[${goods.gdate}]]</td>
+                <td>[[${goods.gprice}]]</td>
+                <td>[[${goods.gstatus}]]</td>
+                <td>[[${goods.gimg}]]</td>
+            </tr>
+        </div>
+
+        <tr>
+            <td colspan="6">
+                <a href="/goods/showGi?opt=1&curPage=1">首页</a>
+                <a href="/goods/showGi?opt=2&curPage="+@{${curPage}}>上一页</a>
+                <a href="/goods/showGi?opt=3&curPage="+[[${curPage}]]>下一页</a>
+                <a href="/goods/showGi?opt=4&curPage="+[[${curPage}]]>尾页</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

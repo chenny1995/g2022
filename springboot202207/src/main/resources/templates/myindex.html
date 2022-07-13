@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>广东检验检疫（检务）网上培训系统后台管理系统</title>
+<link href="css/htlogin.css" rel="stylesheet" type="text/css" />
+<script>
+function logout()
+{
+	window.location="index.html";
+}
+function go()
+{
+	document.all.mainFrame.src="body_trainning/textbook.html";
+}
+function go2()
+{
+	document.all.mainFrame.src="myspace/textbook.html";
+}
+function go3()
+{
+	document.all.mainFrame.src="myspace/testlist.html";
+}
+function go4()
+{
+	document.all.mainFrame.src="moot/mootsubject.html";
+}
+function go5()
+{
+	document.all.mainFrame.src="more.html";
+}
+</script>
+</head>
+
+<frameset rows="100,*,20" name="firFrame">
+	<frameset cols="100%,*">
+		<frame name="topFrame" src="/sh/top" scrolling="no"  framespacing="0"   frameborder="0"  />
+	</frameset>
+	<frameset name="fs" cols="220,8,*">
+		<frame name="sidebarFrame" src="/goods/sidebar" scrolling="auto"  noresize framespacing="0"   frameborder="0"  />
+		<frame name="midFrame" src="/sh/mid"  scrolling="no" framespacing="0"   frameborder="0"  />
+		<frame name="mainFrame" src="/sh/more" scrolling="auto"  noresize framespacing="0"   frameborder="0"  />
+	</frameset>
+	<frameset cols="100%,*">
+		<frame name="bottomFrame" src="/goods/bottom" scrolling="no"  framespacing="0"   frameborder="0"  />
+	</frameset>
+</frameset>
+</body>
+</html>

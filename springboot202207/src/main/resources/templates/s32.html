@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleft.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" width="600">
+        <tr>
+            <th>编号</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品日期</th>
+            <th>商品状态</th>
+            <th>商品图片</th>
+        </tr>
+        <tr th:each="goods: ${list}">
+            <td>[[${goods.gid}]]</td>
+            <td>[[${goods.gname}]]</td>
+            <td>[[${goods.gdate}]]</td>
+            <td>[[${goods.gprice}]]</td>
+            <td>[[${goods.gstatus}]]</td>
+            <td>[[${goods.gimg}]]</td>
+        </tr>
+
+        <tr>
+            <td colspan="6">
+                <a href="/goods/showGi?opt=1&curPage=1">首a页</a>
+                <a href="/goods/showGi?opt=2&curPage=[[${curPage}]]"+[[${curPage}]]>上a一页</a>
+                <a href="/goods/showGi?opt=3&curPage=[[${curPage}]]"+[[${curPage}]]>下a一页</a>
+                <a href="/goods/showGi?opt=4&curPage=[[${curPage}]]"+[[${curPage}]]>尾a页</a>
+
+                <a th:href="@{${path1}(curPage=${curPage})}">首页</a>
+                <a th:href="@{${path2}(curPage=${curPage})}">上一页</a>
+                <a th:href="@{${path3}(curPage=${curPage})}">下一页</a>
+                <a th:href="@{${path4}(curPage=${curPage})}">尾页</a>
+
+
+
+
+                <input type="hidden" th:value="${curPage}"/>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

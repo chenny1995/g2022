@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.springboot202207.t1.dao.GoodsInfoDao">
+    <insert id="addGoodsInfo" parameterType="com.cn.springboot202207.t1.entity.GoodsInfo">
+        insert into goods(gname,gdate,gprice,gstatus,gimg) values(#{gname},#{gdate},#{gprice},#{gstatus},#{gimg})
+    </insert>
+    <update id="updGoodsInfo" parameterType="com.cn.springboot202207.t1.entity.GoodsInfo">
+        update goods set gname=#{gname},gdate=#{gdate},gprice=#{gprice},gstatus=#{gstatus},gimg=#{gimg} where gid=#{gid}
+    </update>
+    <delete id="delGoodsInfo" parameterType="int">
+        delete from goods where gid=#{gid}
+    </delete>
+    <select id="getGoodsInfoById" parameterType="int" resultType="com.cn.springboot202207.t1.entity.GoodsInfo">
+      select * from goods where gid=#{gid}
+    </select>
+    <select id="getGoodss" parameterType="com.cn.springboot202207.t1.entity.GoodsInfo" resultType="com.cn.springboot202207.t1.entity.GoodsInfo">
+      select * from goods
+      <where>
+          <if test="gname != null">
+              and gname like "%"#{gname}"%"
+          </if>
+          <if test="gdate != null">
+              and gdate =#{gdate}
+          </if>
+          <if test="gprice != 0">
+              and gprice=#{gprice}
+          </if>
+      </where>
+    </select>
+    <select id="getAllGoods"  resultType="com.cn.springboot202207.t1.entity.GoodsInfo">
+      select * from goods
+    </select>
+    <select id="getByPage" parameterType="int" resultType="com.cn.springboot202207.t1.entity.GoodsInfo">
+        select * from goods limit #{curPage},10
+    </select>
+    <select id="getRows"  resultType="int">
+        select count(*) cnt from goods
+    </select>
+</mapper>
